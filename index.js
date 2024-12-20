@@ -67,14 +67,6 @@ app.post("/chat", async (req, res) => {
 
     const result = spawn(pythonPath, [scriptPath, question]);
 
-    const phythonPath = path.join(
-      "/home/ubuntu/miniconda",
-      "envs",
-      "myenv",
-      "bin",
-      "python3"
-    );
-
     let answer = "";
     let hasResponse = false;
 

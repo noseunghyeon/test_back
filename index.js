@@ -21,7 +21,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://test-front-lovat.vercel.app",
+    origin: "http://localhost:3000",
+    // origin: "https://test-front-lovat.vercel.app",
     credentials: true,
   })
 );

@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://test-front-8kda4has0-ro981009s-projects.vercel.app",
+    origin: "https://test-front-lovat.vercel.app",
     credentials: true,
   })
 );

@@ -19,12 +19,7 @@ const app = express();
 dotenv.config();
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://legacy-front-ashen.vercel.app",
-    credentials: true,
-  })
-);
+app.use(cors());
 // Swagger 설정
 app.use(
   "/api-docs",

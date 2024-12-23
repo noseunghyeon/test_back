@@ -56,17 +56,17 @@ app.post("/chat", async (req, res) => {
     // );
     const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
     // const result = spawn(pythonPath, [scriptPath, question]);
-    const phythonPath = path.join(
-      "/home/ubuntu/miniconda",
-      "envs",
-      "myenv",
-      "bin",
-      "python3"
-    );
+    // const phythonPath = path.join(
+    //   "/home/ubuntu/miniconda",
+    //   "envs",
+    //   "myenv",
+    //   "bin",
+    //   "python3"
+    // );
     let answer = "";
     // let hasResponse = false;
     // Python 스크립트 실행
-    const pythonProcess = spawn(phythonPath, [scriptPath, question]);
+    const pythonProcess = spawn("python", [scriptPath, question]);
     pythonProcess.stdout.on("data", (data) => {
       answer += data.toString();
     });

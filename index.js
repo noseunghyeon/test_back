@@ -66,7 +66,7 @@ app.post("/chat", async (req, res) => {
     let answer = "";
     // let hasResponse = false;
     // Python 스크립트 실행
-    const pythonProcess = spawn(phythonPath, [scriptPath, question]);
+    const pythonProcess = spawn(pythonPath, [scriptPath, question]);
     pythonProcess.stdout.on("data", (data) => {
       answer += data.toString();
     });

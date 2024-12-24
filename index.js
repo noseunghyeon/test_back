@@ -21,8 +21,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    // origin: "https://test-front-lovat.vercel.app",
+    // origin: "http://localhost:3000",
+    origin: "https://test-front-lovat.vercel.app",
     credentials: true,
   })
 );
@@ -47,13 +47,13 @@ app.post("/chat", async (req, res) => {
   try {
     const { question } = req.body;
     // 추가 함
-    // const pythonPath = path.join(
-    //   "/home/ubuntu/miniconda",
-    //   "envs",
-    //   "myenv",
-    //   "bin",
-    //   "python3"
-    // );
+    const pythonPath = path.join(
+      "/home/ubuntu/miniconda",
+      "envs",
+      "myenv",
+      "bin",
+      "python3"
+    );
     const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
     // const result = spawn(pythonPath, [scriptPath, question]);
     // const phythonPath = path.join(
@@ -66,7 +66,7 @@ app.post("/chat", async (req, res) => {
     let answer = "";
     // let hasResponse = false;
     // Python 스크립트 실행
-    const pythonProcess = spawn("python", [scriptPath, question]);
+    const pythonProcess = spawn(phythonPath, [scriptPath, question]);
     pythonProcess.stdout.on("data", (data) => {
       answer += data.toString();
     });

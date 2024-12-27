@@ -4,12 +4,9 @@ info:
   description: 문화재 정보, 축제 정보, 계정 관리를 위한 API 문서
   version: 1.0.0
 
-servers:
-  - url: https://back.seunghyeon.site
-    description: 개발 서버
-  # 로컬 개발용 서버 추가 (필요한 경우)
-  - url: http://localhost:8000
-    description: 로컬 개발 서버
+# servers:
+# - url: https://back.seunghyeon.site
+#   description: 개발 서버
 
 # 태그 정의 추가
 tags:

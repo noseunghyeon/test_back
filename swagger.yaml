@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 
 servers:
-  - url: http://3.88.139.100
+  - url: http://a.seunghyeon.site
     description: 개발 서버
 
 # 태그 정의 추가

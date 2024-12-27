@@ -5,14 +5,8 @@ info:
   version: 1.0.0
 
 servers:
-  - url: https://back.seunghyeon.site
+  - url: http://3.88.139.100
     description: 개발 서버
-    variables:
-      protocol:
-        enum:
-          - http
-          - https
-        default: https
 
 # 태그 정의 추가
 tags:

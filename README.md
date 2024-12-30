@@ -31,20 +31,20 @@
 **유산지기**: 국가 문화재,행사 알림 서비스
 
 - **구글 맵 지원**:사용자 위치 기반 문화재 정보 제공
-- **챗봇**:  사용자 질문에 실시간으로 응답하고, 관심 있는 문화재 정보를 제공,
+- **챗봇**: 사용자 질문에 실시간으로 응답하고, 관심 있는 문화재 정보를 제공,
   문화재 검색 및 행사 일정 알림
 - **데이터관리**: 문화재 및 행사 데이터의 효율적 저장 및 업데이트
 - **유지보수**: 시스템 안정성 확보 및 정기적 업데이트를 통한 최적화
 
 ## 🎓 구성
 
-| **기능**            | **설명**                                  | **주요 파일**                                                             |
-|---------------------|------------------------------------------|---------------------------------------------------------------------------|
-| **챗봇**            | 챗봇 기능 제공 및 벡터 캐시 관리          | `Chatbot.py`, `Vector_cache`                                             |
-| **컨트롤러**        | 계정 및 행사/문화재 관련 비즈니스 로직관리 | `accountController.js`, `eventController.js`                             |
-| **데이터베이스**    | 데이터베이스 연결 및 설정 관리            | `Database.js`                                                            |
-| **라우트**          | 계정, 행사/문화재, 데이터베이스 라우팅 처리| `accountRoutes.js`, `eventRoutes.js`, `postgresSQLRoutes.js`             |
-| **유틸리티**        | 공통 유틸리티 함수 및 인증 처리           | `apiUtils.js`, `Authenticate.js`                                         |
+| **기능**         | **설명**                                    | **주요 파일**                                                |
+| ---------------- | ------------------------------------------- | ------------------------------------------------------------ |
+| **챗봇**         | 챗봇 기능 제공 및 벡터 캐시 관리            | `Chatbot.py`, `Vector_cache`                                 |
+| **컨트롤러**     | 계정 및 행사/문화재 관련 비즈니스 로직관리  | `accountController.js`, `eventController.js`                 |
+| **데이터베이스** | 데이터베이스 연결 및 설정 관리              | `Database.js`                                                |
+| **라우트**       | 계정, 행사/문화재, 데이터베이스 라우팅 처리 | `accountRoutes.js`, `eventRoutes.js`, `postgresSQLRoutes.js` |
+| **유틸리티**     | 공통 유틸리티 함수 및 인증 처리             | `apiUtils.js`, `Authenticate.js`                             |
 
 ## 💻 개발환경설정
 
@@ -106,9 +106,10 @@ npm start
 ## 박준호
 
 ### 2024-11-27
+
 - Backend 개발용 엔드포인트 작성
   - 외부 API 활용 개발용 엔드포인트 작성
-    
+
 ### 2024-12-03
 
 - Backend 외부 API 연동 완료
@@ -257,30 +258,29 @@ You can list all discoverable environments with `conda info --envs`.
    - SSH를 통해 EC2 서버에 접속 후 다음 명령 실행:
      conda info --envs
 
-   
      결과: 없음
 
      conda create -n myenv python=3.12.7 (나중에는 워크플로 수정)
 
-     
      결과: myenv 생성
 
-2.  라우팅 Linux화 
-   ```javascript
-   // Python 경로 및 스크립트 경로 설정
-   const pythonPath = path.join(
-   "/home/ubuntu/miniconda",
-   "envs",
-   "myenv",
-   "bin",
-   "python3"
-   );
-   const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
+2. 라우팅 Linux화
 
-   let answer = "";
+```javascript
+// Python 경로 및 스크립트 경로 설정
+const pythonPath = path.join(
+  "/home/ubuntu/miniconda",
+  "envs",
+  "myenv",
+  "bin",
+  "python3"
+);
+const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
+
+let answer = "";
 ```
-  *결과: chatbot 연결 확인*
 
+_결과: chatbot 연결 확인_
 
 ```yaml
     - name: Create Conda Environment
@@ -289,11 +289,13 @@ You can list all discoverable environments with `conda info --envs`.
     conda create -n myenv python=3.12.7 || echo "Environment already exists."
 
 ```
- *문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가* 
+
+_문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가_
 
 ## 🦜 랭체인
 
 ## RAG 체인 구현
+
 ```python
 rag_chain = (
     {"context": retriever, "question": RunnablePassthrough()}
@@ -302,6 +304,7 @@ rag_chain = (
     | StrOutputParser()
 )
 ```
+
 - retriever: 벡터 데이터베이스에서 관련 컨텍스트를 검색.
 - RunnablePassthrough: 사용자의 질문을 체인에 전달.
 - prompt: 검색된 컨텍스트와 질문을 결합하여 모델 입력 생성.
@@ -318,7 +321,7 @@ rag_chain = (
 
 ## 📃 자료
 
-- [PPT자료](https://docs.google.com/presentation/d/1VaPaO1-3t9_lWi4qa96L2G9LXGqjrPKW/edit#slide=id.p30)
+- [PPT자료](https://docs.google.com/presentation/d/1z1F5agoIWRG3_6Eu2e_1HxNNaPSOq3K4/edit#slide=id.p1)
 - [erd클라우드](https://www.erdcloud.com/d/x7FB5qMQ6fxk5oGMv/)
 
 ## 🗨️ 연락처

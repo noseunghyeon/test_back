@@ -321,7 +321,7 @@ rag_chain = (
 
 ## 📃 자료
 
-- [PPT자료](https://docs.google.com/presentation/d/1z1F5agoIWRG3_6Eu2e_1HxNNaPSOq3K4/edit#slide=id.p1)
+- [PPT자료](https://docs.google.com/presentation/d/1z1F5agoIWRG3_6Eu2e_1HxNNaPSOq3K4/edit#slide=id)
 - [erd클라우드](https://www.erdcloud.com/d/x7FB5qMQ6fxk5oGMv/)
 
 ## 🗨️ 연락처
